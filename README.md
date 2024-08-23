@@ -11,7 +11,7 @@
 
 Why is it not a fork?
 -------------
-Since the [main neofetch project](https://github.com/dylanaraps/neofetch) is read-only, therefore it is impossible to send a merge request to it
+Since the [main neofetch project](https://github.com/dylanaraps/neofetch) is read-only, therefore it is impossible to send a pull/merge request to it
 -------------
 Neofetch is a command-line system information tool written in `bash 3.2+`. Neofetch displays information about your operating system, software and hardware in an aesthetic and visually pleasing way.
 
