@@ -1140,21 +1140,24 @@ get_distro() {
 
         "Mac OS X"|"macOS")
             case $osx_version in
-                10.4*)  codename="Mac OS X Tiger" ;;
-                10.5*)  codename="Mac OS X Leopard" ;;
+                10.4*)  codename="Mac OS X Tiger"        ;;
+                10.5*)  codename="Mac OS X Leopard"      ;;
                 10.6*)  codename="Mac OS X Snow Leopard" ;;
-                10.7*)  codename="Mac OS X Lion" ;;
-                10.8*)  codename="OS X Mountain Lion" ;;
-                10.9*)  codename="OS X Mavericks" ;;
-                10.10*) codename="OS X Yosemite" ;;
-                10.11*) codename="OS X El Capitan" ;;
-                10.12*) codename="macOS Sierra" ;;
-                10.13*) codename="macOS High Sierra" ;;
-                10.14*) codename="macOS Mojave" ;;
-                10.15*) codename="macOS Catalina" ;;
-                10.16*) codename="macOS Big Sur" ;;
-                11.*)  codename="macOS Big Sur" ;;
-                12.*)  codename="macOS Monterey" ;;
+                10.7*)  codename="Mac OS X Lion"         ;;
+                10.8*)  codename="OS X Mountain Lion"    ;;
+                10.9*)  codename="OS X Mavericks"        ;;
+                10.10*) codename="OS X Yosemite"         ;;
+                10.11*) codename="OS X El Capitan"       ;;
+                10.12*) codename="macOS Sierra"          ;;
+                10.13*) codename="macOS High Sierra"     ;;
+                10.14*) codename="macOS Mojave"          ;;
+                10.15*) codename="macOS Catalina"        ;;
+                10.16*) codename="macOS Big Sur"         ;;
+                11.*)   codename="macOS Big Sur"         ;;
+                12.*)   codename="macOS Monterey"        ;;
+                13.*)   codename="macOS Ventura"         ;;
+                14.*)   codename="macOS Sonoma"          ;;
+                15.*)   codename="macOS Sequoia"         ;;
                 *)      codename=macOS ;;
             esac
 
@@ -1274,23 +1277,32 @@ get_model() {
                 iPad7,[5-6]):        "iPad 6" ;;
                 iPad7,1[12]):        "iPad 7" ;;
                 iPad11,[67]):        "iPad 8" ;;
+                iPad12,[1-2]):       "iPad 9" ;;
+                iPad13,1[8-9]):      "iPad 10" ;;
                 iPad4,[1-3]):        "iPad Air" ;;
                 iPad5,[3-4]):        "iPad Air 2" ;;
                 iPad11,[3-4]):       "iPad Air 3" ;;
                 iPad13,[1-2]):       "iPad Air 4";;
-                iPad6,[7-8]):        "iPad Pro (12.9 Inch)" ;;
-                iPad6,[3-4]):        "iPad Pro (9.7 Inch)" ;;
-                iPad7,[1-2]):        "iPad Pro 2 (12.9 Inch)" ;;
-                iPad7,[3-4]):        "iPad Pro (10.5 Inch)" ;;
-                iPad8,[1-4]):        "iPad Pro (11 Inch)" ;;
-                iPad8,[5-8]):        "iPad Pro 3 (12.9 Inch)" ;;
-                iPad8,9 | iPad8,10): "iPad Pro 4 (11 Inch)" ;;
-                iPad8,1[1-2]):       "iPad Pro 4 (12.9 Inch)" ;;
+                iPad13,1[6-7]):      "iPad Air 5" ;;
+                iPad6,[7-8]):        "iPad Pro (12.9-inch)" ;;
+                iPad6,[3-4]):        "iPad Pro (9.7-inch)" ;;
+                iPad7,[1-2]):        "iPad Pro 2 (12.9-inch 2nd gen)" ;;
+                iPad7,[3-4]):        "iPad Pro (10.5-inch)" ;;
+                iPad8,[1-4]):        "iPad Pro (11-inch)" ;;
+                iPad8,[5-8]):        "iPad Pro 3 (12.9-inch 3rd gen)" ;;
+                iPad8,9 | iPad8,10): "iPad Pro 4 (11-inch 2nd gen)" ;;
+                iPad8,1[1-2]):       "iPad Pro 4 (12.9-inch 4th gen)" ;;
+                iPad13,[4-7]):       "iPad Pro (11-inch 3rd gen)" ;;
+                iPad13,[8-9]):       "iPad Pro (12.9-inch 5th gen)" ;;
+                iPad13,1[0-1]):      "iPad Pro (12.9-inch 5th gen)" ;;
+                iPad14,[3-4]):       "iPad Pro (11-inch 4th gen)" ;;
+                iPad14,[5-6]):       "iPad Pro (12.9-inch 6th gen)" ;;
                 iPad2,[5-7]):        "iPad mini" ;;
                 iPad4,[4-6]):        "iPad mini 2" ;;
                 iPad4,[7-9]):        "iPad mini 3" ;;
                 iPad5,[1-2]):        "iPad mini 4" ;;
                 iPad11,[1-2]):       "iPad mini 5" ;;
+                iPad14,[1-2]):       "iPad mini 6" ;;
 
                 iPhone1,1):     "iPhone" ;;
                 iPhone1,2):     "iPhone 3G" ;;
@@ -1321,6 +1333,15 @@ get_model() {
                 iPhone13,2):    "iPhone 12" ;;
                 iPhone13,3):    "iPhone 12 Pro" ;;
                 iPhone13,4):    "iPhone 12 Pro Max" ;;
+                iPhone14,2):    "iPhone 13 Pro" ;;
+                iPhone14,3):    "iPhone 13 Pro Max" ;;
+                iPhone14,4):    "iPhone 13 Mini" ;;
+                iPhone14,5):    "iPhone 13" ;;
+                iPhone14,6):    "iPhone SE 2022" ;;
+                iPhone14,7):    "iPhone 14" ;;
+                iPhone14,8):    "iPhone 14 Plus" ;;
+                iPhone15,2):    "iPhone 14 Pro" ;;
+                iPhone15,3):    "iPhone 14 Pro Max" ;;
 
                 iPod1,1): "iPod touch" ;;
                 ipod2,1): "iPod touch 2G" ;;
@@ -2308,11 +2329,21 @@ get_cpu() {
                 "iPhone11,"[2468] | "iPad11,"[1-4] | "iPad11,"[6-7]): "Apple A12 Bionic (6) @ 2.49GHz" ;;
                 "iPhone12,"[1358]): "Apple A13 Bionic (6) @ 2.65GHz" ;;
                 "iPhone13,"[1-4] | "iPad13,"[1-2]): "Apple A14 Bionic (6) @ 3.00Ghz" ;;
+                "iPhone14,"[2-8]): "Apple A15 Bionic (6) @ 3.23GHz" ;;
+                "iPhone15,"[2-3]): "Apple A16 Bionic (6) @ 3.46GHz" ;;
+                "iPad12,"[1-2]): "Apple A13 Bionic (6) @ 2.65GHz" ;;
+                "iPad13,"[4-9]): "Apple M1 (8) @ 3.19GHz" ;;
+                "iPad13,1"[0-1]): "Apple M1 (8) @ 3.19GHz" ;;
+                "iPad13,1"[6-7]): "Apple M1 (8) @ 3.19GHz" ;;
+                "iPad13,1"[8-9]): "Apple A14 Bionic (6) @ 3.00GHz" ;;
+                "iPad14,"[1-2]): "Apple A15 Bionic (6) @ 3.23GHz" ;;
+                "iPad14,"[3-6]): "Apple M2 (8) @ 3.49GHz" ;;
 
                 "iPod2,1"): "Samsung S5L8720 (1) @ 533MHz" ;;
                 "iPod3,1"): "Samsung S5L8922 (1) @ 600MHz" ;;
                 "iPod7,1"): "Apple A8 (2) @ 1.1GHz" ;;
-                "iPad1,1"): "Apple A4 (1) @ 1GHz" ;;
+                "iPod9,1"): "Apple A10 Fusion (4) @ 1.64GHz" ;;
+                "iPad1,"[1-2]): "Apple A4 (1) @ 1GHz" ;;
                 "iPad2,"[1-7]): "Apple A5 (2) @ 1GHz" ;;
                 "iPad3,"[1-3]): "Apple A5X (2) @ 1GHz" ;;
                 "iPad3,"[4-6]): "Apple A6X (2) @ 1.4GHz" ;;
