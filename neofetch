@@ -780,7 +780,7 @@ image_source="auto"
 # Default: 'auto'
 # Values:  'auto', 'distro_name'
 # Flag:    --ascii_distro
-# NOTE: AIX, Hash, Alpine, AlterLinux, Amazon, Anarchy, Android, instantOS,
+# NOTE: AIX, Hash, Alpine, ALT, AlterLinux, Amazon, Anarchy, Android, instantOS,
 #       Antergos, antiX, "AOSC OS", "AOSC OS/Retro", Apricity, ArchCraft,
 #       ArcoLinux, ArchBox, ARCHlabs, ArchStrike, XFerience, ArchMerge, Arch,
 #       Artix, Arya, AstraLinux, Bedrock, Bitrig, BlackArch, BLAG, BlankOn, BlueLight,
@@ -971,7 +971,23 @@ get_distro() {
 
     case $os in
         Linux|BSD|MINIX)
-            if [[ -f /etc/astra_version ]]; then
+		
+            if [[ -f /etc/altlinux-release && $DESKTOP_SESSION =~ "gnome" ]]; then
+                case $distro_shorthand in
+                    on|tiny) distro="ALT Regular Sisyphus" ;;
+                    *) distro="$(< /etc/altlinux-release)"
+                        if [[ $ascii_distro =~ "auto" || $ascii_distro == "" ]]; then
+                            ascii_distro="ALT_GNOME"
+                        fi
+                esac
+
+            elif [[ -f /etc/altlinux-release ]]; then
+                case $distro_shorthand in
+                    on|tiny) distro="ALT" ;;
+                    *) distro="$(< /etc/altlinux-release)"
+                esac
+		
+            elif [[ -f /etc/astra_version ]]; then
                 distro="AstraLinux"
                 distro_version="$(sed -nr 's/^[^0-9]*(([0-9]+\.)*[0-9]+).*/\1/p' < /etc/astra_version)"
                 if [[ $distro_version == "2."* ]]; then
@@ -5187,7 +5203,7 @@ ASCII:
     --ascii_colors x x x x x x  Colors to print the ascii art
     --ascii_distro distro       Which Distro's ascii art to print
 
-                                NOTE: AIX, Hash, Alpine, AlterLinux, Amazon, Anarchy, Android,
+                                NOTE: AIX, Hash, Alpine, ALT, AlterLinux, Amazon, Anarchy, Android,
                                 instantOS, Antergos, antiX, \"AOSC OS\", \"AOSC OS/Retro\",
                                 Apricity, ArchCraft, ArcoLinux, ArchBox, ARCHlabs, ArchStrike,
                                 XFerience, ArchMerge, Arch, Artix, Arya, AstraLinux, Bedrock, Bitrig,
@@ -5693,6 +5709,62 @@ hdddyo+ohddyosdddddddddho+oydddy++ohdddh
      /dddddddddddddddddddddddddddd/
       :dddddddddddddddddddddddddd:
        .hddddddddddddddddddddddh.
+EOF
+        ;;
+
+        *ALT*GNOME* )
+            set_colors 3 3 16 15
+            read -rd '' ascii_data <<'EOF'
+${c2}             ##############
+${c2}         ######################
+${c2}       ##########################
+${c2}     ##+${c3}###*${c2}#######################
+${c2}   #####${c3}#${c2}*${c3}###%+${c2}######################
+${c2}  ########${c3}%${c2}*#${c3}%#####${c2}###################
+${c2} ##########${c3}##${c2}*#*${c3}#######%+${c2}##############
+${c2}#############${c3}%#############%${c2}############
+${c2}#############${c3}+################${c2}##########
+${c2}##############${c3}################*${c2}#########
+${c2}##############${c3}+################+${c2}########
+${c2}###############${c3}##########${c2}###${c3}+##%${c2}########
+${c2}###############${c3}+########${c2}######${c3}###${c2}#######
+${c2}#############${c3}*####${c2}############${c3}%#+${c2}#######
+${c2}############${c3}+###${c4}####${c2}##########${c3}%#*${c2}#######
+${c2} ##########${c3}###*${c4}######${c3}+#+${c2}#####${c3}+##*${c2}######
+${c2}  #########${c3}##%${c4}#####${c3}:%#####${c2}###${c3}###*${c2}#####
+${c2}   ########${c3}%#+${c4}######${c3}#############${c2}####
+${c2}     #####${c3}##%:${c4}######${c3}:############${c2}##
+${c2}       ##${c3}+##*${c4}########${c3}############${c2}
+${c2}         ${c3}###${c4}#########${c3}##########${c2}
+${c2}             ${c4}########${c3}######${c2}
+EOF
+        ;;
+
+        "ALT"*)
+            set_colors 3 3 16 15 1
+            read -rd '' ascii_data <<'EOF'
+${c2}#################${c5}-=${c3}:${c2}###########
+${c2}###################${c3}:${c5}=${c3}.::${c2}#######
+${c2}###################${c3} .....${c2}######
+${c2}##################${c3}:${c5}++.:*${c3}*:${c2}#####
+${c2}#################${c3}*${c4}@@@${c5}:${c3}.+-.${c2}#####
+${c2}################${c3}-${c4}@@@@${c3}.....${c2}#####
+${c2}###############${c3}-${c4}@@@@@${c3}......${c2}####
+${c2}######${c3}........:${c4}@@@@@@${c3}......:${c2}###
+${c2}####${c3}:......+=....${c4}@@@@=${c3}......${c2}###
+${c2}###:${c3}....${c4}-@@@@@*${c3}-${c5}*${c3}*.${c4}@@:${c3}.......${c2}##
+${c2}###${c3}.....${c4}@@@@@@@${c3}-${c5}**:${c3}=${c4}@${c3}........${c2}##
+${c2}##${c3}.....${c4}:@@@@@@@${c3}....-${c4}=${c3}....${c4}-${c3}...${c2}##
+${c2}##${c3}......${c4}@@@@@@@@${c3}=*${c4}.@${c3}....${c4}#${c3}....:${c2}#
+${c2}##${c3}......${c4}@@@@@@${c2}:${c4}@@${c5}*${c4}@@${c3}...${c4}#${c3}.....:${c2}#
+${c2}##${c3}......${c4}@@@@@${c2}##${c4}@@${c5}=${c4}@@${c3}:..${c4}@${c3}.....:${c2}#
+${c2}##:${c3}.+..${c4}%@@@@@${c2}##${c4}-@@@@@${c3}..${c4}@${c3}.....:${c2}#
+${c2}###${c3}.:.${c4}=@@@@@${c3}-${c2}##${c4}#@@@@@@${c3}.${c4}@${c3}:.....${c2}#
+${c2}###${c3}..${c4}@@@@@@@#${c5}-*${c3}#=${c4}%@@@@@@+${c3}.....${c2}#
+${c2}###${c3}..${c4}#@@@@@${c3}:${c2}###${c3}-${c4}%:${c3}:${c4}@@@@@@@:${c3}...${c2}#
+${c2}###${c3}...${c4}@@@@@${c3}%${c2}###${c3}-${c4}@@${c3}.${c4}%@@@@@@+${c3}...${c2}#
+${c2}###${c3}...${c4}*@@@*${c3}%${c2}####${c3}-${c4}@=${c3}.${c4}%@@@@@${c3}...${c2}##
+${c2}##:${c3}..${c4}:@@@@#${c2}#%%%${c3}..${c4}%${c3}:--${c4}@@@${c3}......${c2}#
 EOF
         ;;
 
