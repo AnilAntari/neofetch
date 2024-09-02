@@ -7,9 +7,8 @@
 <a href="https://repology.org/metapackage/neofetch"><img src="https://repology.org/badge/tiny-repos/neofetch.svg" alt="Packaging status"></a>
 </p>
 
-Why is it not a fork?
 -------------
-Since the [main neofetch project](https://github.com/dylanaraps/neofetch) is read-only, therefore it is impossible to send a pull/merge request to it
+Reincarnation [main neofetch project](https://github.com/dylanaraps/neofetch)
 -------------
 <img src="https://i.imgur.com/GFmC5Ad.png" alt="neofetch" align="right" height="240px">
 Neofetch is a command-line system information tool written in `bash 3.2+`. Neofetch displays information about your operating system, software and hardware in an aesthetic and visually pleasing way.
