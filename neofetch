@@ -29,7 +29,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-version=8.0.0
+version=8.1.0
 
 # Fallback to a value of '5' for shells which support bash
 # but do not set the 'BASH_' shell variables (osh).
@@ -805,7 +805,7 @@ image_source="auto"
 #       Rocky, Rosa, sabotage, Sabayon, Sailfish, SalentOS, Scientific, Septor,
 #       SereneLinux, SharkLinux, Siduction, SkiffOS, Slackware, SliTaz, SmartOS,
 #       Solus, Source_Mage, Sparky, Star, SteamOS, SunOS, openSUSE_Leap, t2,
-#       openSUSE_Tumbleweed, openSUSE, SwagArch, Tails, Trisquel,
+#       openSUSE_Slowroll, openSUSE_Tumbleweed, openSUSE, SwagArch, Tails, Trisquel,
 #       Ubuntu-Cinnamon, Ubuntu-Budgie, Ubuntu-GNOME, Ubuntu-MATE,
 #       Ubuntu-Studio, Ubuntu, Univention, Venom, Void, VNux, LangitKetujuh, semc,
 #       Obarun, windows10, Windows7, Xubuntu, Zorin, and IRIX have ascii logos.
@@ -5229,8 +5229,8 @@ ASCII:
                                 sabotage, Sabayon, Sailfish, SalentOS, Scientific, Septor,
                                 SereneLinux, SharkLinux, Siduction, Slackware, SliTaz, SmartOS,
                                 Solus, Source_Mage, Sparky, Star, SteamOS, SunOS, openSUSE_Leap,
-                                t2, openSUSE_Tumbleweed, openSUSE, SwagArch, Tails, TeArch, Trisquel,
-                                Ubuntu-Cinnamon, Ubuntu-Budgie, Ubuntu-GNOME, Ubuntu-MATE,
+                                t2, openSUSE_Slowroll, openSUSE_Tumbleweed, openSUSE, SwagArch, Tails, TeArch,
+                                Trisquel, Ubuntu-Cinnamon, Ubuntu-Budgie, Ubuntu-GNOME, Ubuntu-MATE,
                                 Ubuntu-Studio, Ubuntu, Univention, Venom, Void, VNux, LangitKetujuh, semc,
                                 Obarun, windows10, Windows7, Xubuntu, Zorin, and IRIX have ascii logos.
 
@@ -10925,22 +10925,24 @@ EOF
         "openSUSE Leap"* | "openSUSE_Leap"*)
             set_colors 2 7
             read -rd '' ascii_data <<'EOF'
-${c2}                 `-++:`
-               ./oooooo/-
-            `:oooooooooooo:.
-          -+oooooooooooooooo+-`
-       ./oooooooooooooooooooooo/-
-      :oooooooooooooooooooooooooo:
-    `  `-+oooooooooooooooooooo/-   `
- `:oo/-   .:ooooooooooooooo+:`  `-+oo/.
-`/oooooo:.   -/oooooooooo/.   ./oooooo/.
-  `:+ooooo+-`  `:+oooo+-   `:oooooo+:`
-     .:oooooo/.   .::`   -+oooooo/.
-        -/oooooo:.    ./oooooo+-
-          `:+ooooo+-:+oooooo:`
-             ./oooooooooo/.
-                -/oooo+:`
-                  `:/.
+${c2}            ====
+           ======
+         ==== ====+
+       +====    +====
+     +===+        ====
+    ====            ====
+  +===               +====
+  ====               +====
+   =====            ====
+     +===+        =====
+  ==+  =====    +===+  ===
+  ====   ==== =====  =====
+    ====  =======   ====
+      ====  ===   ====
+       ====+    ====
+         ==== =====
+           ======
+             ==
 EOF
         ;;
 
@@ -10957,22 +10959,57 @@ TTTTTTTTTT
 EOF
         ;;
 
+        "openSUSE Tumbleweed-Slowroll"* | "openSUSE_Slowroll"*)
+            set_colors 2 7
+            read -rd '' ascii_data <<'EOF'
+${c2}              _aaaymQQmwaaa,
+          ,wWQQQD????????$QQQQa,.
+       _wQQB?"              ??QQQa,
+     sQQD^                      ?QQ6\
+    yWW'                          4QQg
+  ,QQD          .aaaaaaaa          ^4Q6
+ ,mQP        _wWQW?????YWWQa,        4Qm
+ jQ@        wWW?'        ^4QQc       ^$QL
+,QQ'       jWW'            )QW\       ]QQ
+|QQ       ,QW'              ]QQ       ^QQ|
+|QQ       |QQ               ]QQ        QQ|
+|QQ        4Qg              ]QQ       .QQ|
+'QQ6       '$WQac.         _QQ(       jQQ
+ ]QQw        "?QWQQf      _mQP       ,QQ(
+  4QQga                  wQQP       ,mQ?
+   4QQQga,            saQWP'       jQQf
+    ?QQQQQQwaaaaaaaayWWW?'       _mQ@'
+      ?WQQQP?9VWUV???^        _amQP^
+        "4QQQaa,          ,awQQQ?^
+           "?VQQQQQQQQQQQQQQP?'
+EOF
+        ;;
+
         "openSUSE Tumbleweed"* | "openSUSE_Tumbleweed"*)
             set_colors 2 7
             read -rd '' ascii_data <<'EOF'
-${c2}                                     ......
-     .,cdxxxoc,.               .:kKMMMNWMMMNk:.
-    cKMMN0OOOKWMMXo. ;        ;0MWk:.      .:OMMk.
-  ;WMK;.       .lKMMNM,     :NMK,             .OMW;
- cMW;            'WMMMN   ,XMK,                 oMM'
-.MMc               ..;l. xMN:                    KM0
-'MM.                   'NMO                      oMM
-.MM,                 .kMMl                       xMN
- KM0               .kMM0. .dl:,..               .WMd
- .XM0.           ,OMMK,    OMMMK.              .XMK
-   oWMO:.    .;xNMMk,       NNNMKl.          .xWMx
-     :ONMMNXMMMKx;          .  ,xNMWKkxllox0NMWk,
-         .....                    .:dOOXXKOxl,
+${c2}         JJJJJJJJ
+      JJJJJJJJJJJJJJ
+    JJJJJJ   =JJJJJJJ
+   JJJJ      =JJJ JJJJ
+   JJJ       =JJJ   JJJ
+  JJJJ       =JJJ   JJJ
+  JJJJJJJJJJJJJJJ   JJJJ
+   JJJJJJJJJJJJJJ   JJJJ
+   JJJJ             JJJJ
+    JJJJJ=          JJJJ
+      JJJJJJJJJJJJJJJJJJJJJJJJJJJJJ=
+        =JJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
+                    JJJJ         =JJJJJJ
+                    JJJJ            =JJJJ
+                    JJJJ   JJJJJJJJJJJJJJ
+                    JJJJ   JJJJJJJJJJJJJJJ
+                    JJJJ   JJJJ       JJJJ
+                     JJJ   JJJJ       JJJ
+                     JJJJJ JJJJ      JJJJ
+                      =JJJJJJJJ   JJJJJJ
+                        JJJJJJJJJJJJJJ
+                           JJJJJJJ=
 EOF
         ;;
 
