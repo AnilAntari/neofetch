@@ -1170,10 +1170,18 @@ get_distro() {
             fi
 
             # Get Debian Minor version
-            if [[ $distro == "Debian"* ]]; then
+      if [[ $distro == "Debian"* ]]; then
+          if [[ -f /etc/debian_version ]]; then
               debian_minor_version=$(cat /etc/debian_version)
-              distro=$(echo $distro | sed "s/[0-9]\+/$debian_minor_version/g")
-            fi
+              if [[ -n $debian_minor_version ]]; then
+                  distro=$(echo $distro | sed "s/[0-9] /$debian_minor_version/g")
+              else
+                  echo "Warning: /etc/debian_version is empty"
+              fi
+          else
+              echo "Warning: /etc/debian_version file not found"
+          fi
+      fi
         ;;
 
         "Mac OS X"|"macOS")
