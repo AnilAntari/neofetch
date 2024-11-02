@@ -1172,7 +1172,7 @@ get_distro() {
             # Get Debian Minor version
             if [[ $distro == "Debian"* ]]; then
               debian_minor_version=$(cat /etc/debian_version)
-              distro="Debian ${debian_minor_version} GNU/Linux"
+              distro=$(echo $distro | sed "s/[0-9]\+/$debian_minor_version/g")
             fi
         ;;
 
