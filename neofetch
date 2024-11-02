@@ -1064,6 +1064,8 @@ get_distro() {
                     off)  distro="${PRETTY_NAME:-${DISTRIB_DESCRIPTION}} ${UBUNTU_CODENAME}" ;;
                 esac
 
+
+
             elif [[ -f /etc/GoboLinuxVersion ]]; then
                 case $distro_shorthand in
                     on|tiny) distro=GoboLinux ;;
@@ -1165,6 +1167,12 @@ get_distro() {
                     *"budgie"*)   distro=${distro/Ubuntu/Ubuntu Budgie} ;;
                     *"cinnamon"*) distro=${distro/Ubuntu/Ubuntu Cinnamon} ;;
                 esac
+            fi
+
+            # Get Debian Minor version
+            if [[ $distro == "Debian"* ]]; then
+              debian_minor_version=$(cat /etc/debian_version)
+              distro=$(echo $distro | sed "s/[0-9]\+/$debian_minor_version/g")
             fi
         ;;
 
