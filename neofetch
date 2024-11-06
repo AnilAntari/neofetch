@@ -85,6 +85,7 @@ print_info() {
     # info "Public IP" public_ip
     # info "Users" users
     # info "Locale" locale  # This only works on glibc systems.
+    # info "BIOS Info" bios_info
 
     info cols
 }
@@ -2255,6 +2256,13 @@ get_wm_theme() {
     esac
 
     wm_theme=$(trim_quotes "$wm_theme")
+}
+
+get_bios() {
+    bios_vendor="$(< /sys/class/dmi/id/bios_vendor)"
+    bios_version="$(< /sys/class/dmi/id/bios_version)"
+    bios_date="$(< /sys/class/dmi/id/bios_date)"
+    bios_info="$bios_vendor $bios_version $bios_date"
 }
 
 get_cpu() {
@@ -11821,6 +11829,7 @@ main() {
     [[ $verbose != on ]] && exec 2>/dev/null
     get_simple "$@"
     get_distro
+    get_bios
     get_bold
     get_distro_ascii
     [[ $stdout == on ]] && stdout
