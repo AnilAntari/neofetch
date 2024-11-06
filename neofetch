@@ -1065,8 +1065,6 @@ get_distro() {
                     off)  distro="${PRETTY_NAME:-${DISTRIB_DESCRIPTION}} ${UBUNTU_CODENAME}" ;;
                 esac
 
-
-
             elif [[ -f /etc/GoboLinuxVersion ]]; then
                 case $distro_shorthand in
                     on|tiny) distro=GoboLinux ;;
@@ -1171,18 +1169,12 @@ get_distro() {
             fi
 
             # Get Debian Minor version
-      if [[ $distro == "Debian"* ]]; then
-          if [[ -f /etc/debian_version ]]; then
+            if [[ $distro == "Debian"* ]]; then
               debian_minor_version=$(cat /etc/debian_version)
               if [[ -n $debian_minor_version ]]; then
-                  distro=$(echo $distro | sed "s/[0-9] /$debian_minor_version/g")
-              else
-                  echo "Warning: /etc/debian_version is empty"
+                  distro=$(echo $distro | sed "s/[0-9]\+/$debian_minor_version/g")
               fi
-          else
-              echo "Warning: /etc/debian_version file not found"
-          fi
-      fi
+            fi
         ;;
 
         "Mac OS X"|"macOS")
