@@ -782,7 +782,7 @@ image_source="auto"
 # Default: 'auto'
 # Values:  'auto', 'distro_name'
 # Flag:    --ascii_distro
-# NOTE: AIX, Hash, Alpine, ALT, AlterLinux, Amazon, Anarchy, Android, instantOS,
+# NOTE: AIX, AlmaLinux, Alpine, ALT, AlterLinux, Amazon, Anarchy, Android, instantOS,
 #       Antergos, antiX, "AOSC OS", "AOSC OS/Retro", Apricity, ArchCraft,
 #       ArcoLinux, ArchBox, ARCHlabs, ArchStrike, XFerience, ArchMerge, Arch,
 #       Artix, Arya, AstraLinux, Bedrock, Bitrig, BlackArch, BLAG, BlankOn, BlueLight,
@@ -792,7 +792,7 @@ image_source="auto"
 #       DesaOS, Devuan, DracOS, DarkOs, Itc, DragonFly, Drauger, Elementary,
 #       EndeavourOS, Endless, EuroLinux, Exherbo, Fedora, Feren, FreeBSD,
 #       FreeMiNT, Frugalware, Funtoo, GalliumOS, Garuda, Gentoo, GhostBSD, Pentoo,
-#       gNewSense, GNOME, GNU, GoboLinux, Grombyang, Guix, Haiku, Huayra, HydroOS
+#       gNewSense, GNOME, GNU, GoboLinux, Grombyang, Guix, Haiku, Hash, Huayra, HydroOS
 #       Hyperbola, iglunix, janus, Kali, KaOS, KDE_neon, Kibojoe, Kogaion, Korora,
 #       KSLinux, Kubuntu, LEDE, LaxerOS, LibreELEC, LFS, Linux_Lite, LinuxMint, Live_Raizo, 
 #       LMDE, Lubuntu, Lunar, macos, Mageia, MagpieOS, Mandriva, Manjaro, TeArch, Maui,
@@ -5227,7 +5227,7 @@ ASCII:
     --ascii_colors x x x x x x  Colors to print the ascii art
     --ascii_distro distro       Which Distro's ascii art to print
 
-                                NOTE: AIX, Hash, Alpine, ALT, AlterLinux, Amazon, Anarchy, Android,
+                                NOTE: AIX, AlmaLinux, Alpine, ALT, AlterLinux, Amazon, Anarchy, Android,
                                 instantOS, Antergos, antiX, \"AOSC OS\", \"AOSC OS/Retro\",
                                 Apricity, ArchCraft, ArcoLinux, ArchBox, ARCHlabs, ArchStrike,
                                 XFerience, ArchMerge, Arch, Artix, Arya, AstraLinux, Bedrock, Bitrig,
@@ -5238,10 +5238,10 @@ ASCII:
                                 DracOS, DarkOs, Itc, DragonFly, Drauger, Elementary, EndeavourOS, Endless,
                                 EuroLinux, Exherbo, Fedora, Feren, FreeBSD, FreeMiNT, Frugalware,
                                 Funtoo, GalliumOS, Garuda, Gentoo, GhostBSD, Pentoo, gNewSense, GNOME, GNU,
-                                GoboLinux, Grombyang, Guix, Haiku, Huayra, Hyperbola, iglunix, janus, Kali,
-                                KaOS, KDE_neon, Kibojoe, Kogaion, Korora, KSLinux, Kubuntu, LEDE,
-                                LaxerOS, LibreELEC, LFS, Linux_Lite, LinuxMint, Live_Raizo, LMDE, 
-                                Lubuntu, Lunar, macos,Mageia, MagpieOS, Mandriva, Manjaro, Maui, 
+                                GoboLinux, Grombyang, Guix, Haiku, Hash, Huayra, Hyperbola, iglunix, janus,
+                                Kali, KaOS, KDE_neon, Kibojoe, Kogaion, Korora, KSLinux, Kubuntu, LEDE,
+                                LaxerOS, LibreELEC, LFS, Linux_Lite, LinuxMint, Live_Raizo, LMDE,
+                                Lubuntu, Lunar, macos,Mageia, MagpieOS, Mandriva, Manjaro, Maui,
                                 Mer, Minix, MOS, MX_Linux, Namib, Neptune, NetBSD, Netrunner, Nitrux,
                                 NixOS, Nobara, Nurunner, NuTyX, OBRevenge, OpenBSD, openEuler, OpenIndiana,
                                 openmamba, OpenMandriva, OpenStage, OpenWrt, osmc, Oracle,
