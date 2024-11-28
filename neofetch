@@ -86,6 +86,7 @@ print_info() {
     # info "Users" users
     # info "Locale" locale  # This only works on glibc systems.
     # info "BIOS Info" bios_info
+    # info "Local Time" LocalTime
 
     info cols
 }
@@ -2257,6 +2258,10 @@ get_bios() {
     bios_version="$(< /sys/class/dmi/id/bios_version)"
     bios_date="$(< /sys/class/dmi/id/bios_date)"
     bios_info="$bios_vendor $bios_version $bios_date"
+}
+
+get_localtime() {
+    LocalTime="$(date +%R)"
 }
 
 get_cpu() {
@@ -11980,6 +11985,7 @@ main() {
     get_simple "$@"
     get_distro
     get_bios
+    get_localtime
     get_bold
     get_distro_ascii
     [[ $stdout == on ]] && stdout
