@@ -2261,7 +2261,7 @@ get_bios() {
 }
 
 get_localtime() {
-    LocalTime="$(date "+%R %d/%m/%Y")"
+    LocalTime="$(date "+%R %d.%m.%Y")"
 }
 
 get_cpu() {
