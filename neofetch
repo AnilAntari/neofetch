@@ -806,7 +806,7 @@ image_source="auto"
 #       Reborn_OS, Redstar, Redcore, Redhat, Refracted_Devuan, Regata, Regolith,
 #       Rocky, Rosa, sabotage, Sabayon, Sailfish, SalentOS, Salix, Scientific, Septor,
 #       SereneLinux, SharkLinux, Siduction, SkiffOS, Slackel, Slackware, SliTaz, SmartOS,
-#       Solus, Source_Mage, Sparky, Star, SteamOS, SunOS, openSUSE_Leap, t2,
+#       Snal, Solus, Source_Mage, Sparky, Star, SteamOS, SunOS, openSUSE_Leap, t2,
 #       openSUSE_Slowroll, openSUSE_Tumbleweed, openSUSE, SwagArch, Tails, TeArch, Trisquel,
 #       Ubuntu-Cinnamon, Ubuntu-Budgie, Ubuntu-GNOME, Ubuntu-MATE,
 #       Ubuntu-Studio, Ubuntu, Univention, uwuntu, Venom, Void, VNux, LangitKetujuh, semc,
@@ -5255,7 +5255,7 @@ ASCII:
                                 Proxmox, PuffOS, Puppy, PureOS, Qubes, Qubyt, Quibian, Radix, Raspbian, Reborn_OS,
                                 Redstar, Redcore, Redhat, RED OS, Refracted_Devuan, Regata, Regolith, Rosa,
                                 sabotage, Sabayon, Sailfish, SalentOS, Salix, Scientific, Septor,
-                                SereneLinux, SharkLinux, Siduction, Slackel, Slackware, SliTaz, SmartOS,
+                                SereneLinux, SharkLinux, Siduction, Slackel, Slackware, SliTaz, SmartOS, Snal,
                                 Solus, Source_Mage, Sparky, Star, SteamOS, SunOS, openSUSE_Leap,
                                 t2, openSUSE_Slowroll, openSUSE_Tumbleweed, openSUSE, SwagArch, Tails, TeArch,
                                 Trisquel, Ubuntu-Cinnamon, Ubuntu-Budgie, Ubuntu-GNOME, Ubuntu-MATE,
@@ -10927,6 +10927,29 @@ yyyyyyyyyyyyyyyy  syyyyyyyyy  syyyy
 yyyyyyyyyyyyyyyy              yyyyy
 yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
 yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
+EOF
+        ;;
+
+        "Snal"*)
+            set_colors 3 3 15
+            read -rd '' ascii_data <<'EOF'
+${c3}               ##########
+            ################
+        ########################
+      ############################
+    ################################
+   ###################################
+  ############          ###############
+ ###########   #########   #############
+ ##########  #############  ############
+${c3} ########## ################ ############          ${c1}######
+${c3} ##########  #####  ########  #########     ${c1}################
+${c3} ###########   ###  ########  ########  ${c1}######################
+${c3}  #############   ########## ####### ${c1}#########################
+${c3}   ########################  ##### ${c1}##########################
+${c3}     ########################## ${c1}############################
+${c1}    ## ${c3}##################### ${c1}#############################
+${c1}########### ${c3}############# ${c1}############################
 EOF
         ;;
 
