@@ -784,7 +784,7 @@ image_source="auto"
 # Values:  'auto', 'distro_name'
 # Flag:    --ascii_distro
 # NOTE: AIX, AlmaLinux, Alpine, ALT, AlterLinux, Amazon, Anarchy, Android, instantOS,
-#       Antergos, antiX, "AOSC OS", "AOSC OS/Retro", Apricity, ArchCraft,
+#       Antergos, antiX, "AOSC OS", "AOSC OS/Retro", Apricity, ArchCraft, Archman,
 #       ArcoLinux, ArchBox, ARCHlabs, ArchStrike, XFerience, ArchMerge, Arch,
 #       Artix, Arya, AstraLinux, Bedrock, Bitrig, BlackArch, BLAG, BlankOn, BlueLight,
 #       Bodhi, bonsai, BSD, BunsenLabs, CachyOS, Calculate, Carbs, CentOS, Chakra, ChaletOS,
@@ -5234,7 +5234,7 @@ ASCII:
 
                                 NOTE: AIX, AlmaLinux, Alpine, ALT, AlterLinux, Amazon, Anarchy, Android,
                                 instantOS, Antergos, antiX, \"AOSC OS\", \"AOSC OS/Retro\",
-                                Apricity, ArchCraft, ArcoLinux, ArchBox, ARCHlabs, ArchStrike,
+                                Apricity, ArchCraft, Archman, ArcoLinux, ArchBox, ARCHlabs, ArchStrike,
                                 XFerience, ArchMerge, Arch, Artix, Arya, AstraLinux, Bedrock, Bitrig,
                                 BlackArch, BLAG, BlankOn, BlueLight, Bodhi, bonsai, BSD, BunsenLabs,
                                 CachyOS, Calculate, Carbs, CentOS, Chakra, ChaletOS, Chapeau, Chrom,
@@ -6084,6 +6084,37 @@ ${c1}                   -m:
   :NMMMMMy         `s`   :h.   oMMMMMM+ `-----
  +MMMMMMo         .dMm.   `o.   +MMMMMMo
 sMMMMMM+         .mMMMN:    :`   :NMMMMMy
+EOF
+        ;;
+
+        "Archman"*)
+            set_colors 1 1 7
+            read -rd '' ascii_data <<'EOF'
+${c1}                        %
+                       ###
+                      #####
+                     #######
+                    #########
+                    ##########
+                    ###########
+                  ##############
+                 ################
+                ##################
+               ####################
+              ######################
+             ########${c3}########${c1}########
+            #######${c3}############${c1}#######
+           #######${c3}#####     ####${c1}#######
+          #######${c3}####    #    ###${c1}#######
+         ########${c3}###    ###    ##${c1}########
+        #########${c3}## ########### #${c1}#########
+       ###########${c3}#   #######   #${c1}#########
+      #############${c3}    #####   #${c1}############
+     ###########@@@@${c3}  #"   "#  ${c1}@@@###########
+    #######@@@@@                 @@@@@@#######
+   #####@@@@                          @@@@@####
+  ##@##@@                                 @##@##
+ @##@                                        @###
 EOF
         ;;
 
