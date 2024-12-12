@@ -791,7 +791,7 @@ image_source="auto"
 #       Chapeau, Chrom*, Cleanjaro, ClearOS, Clear_Linux, Clover, Condres,
 #       Container_Linux, Crystal Linux, CRUX, Cucumber, dahlia, Debian, Deepin,
 #       DesaOS, Devuan, DracOS, DarkOs, Itc, DragonFly, Drauger, Elementary,
-#       EndeavourOS, Endless, EuroLinux, Exherbo, Fedora, Feren, FreeBSD,
+#       Emmabuntus, EndeavourOS, Endless, EuroLinux, Exherbo, Fedora, Feren, FreeBSD,
 #       FreeMiNT, Frugalware, Funtoo, GalliumOS, Garuda, Gentoo, GhostBSD, Pentoo,
 #       gNewSense, GNOME, GNU, GoboLinux, Grombyang, Guix, Haiku, Hash, Huayra, HydroOS
 #       Hyperbola, iglunix, janus, Kali, KaOS, KDE_neon, Kibojoe, Kogaion, Korora,
@@ -5240,8 +5240,8 @@ ASCII:
                                 CachyOS, Calculate, Carbs, CentOS, Chakra, ChaletOS, Chapeau, Chrom,
                                 Cleanjaro, ClearOS, Clear_Linux, Clover, Condres, Container_Linux,
                                 Crystal Linux, CRUX, Cucumber, dahlia, Debian, Deepin, DesaOS, Devuan,
-                                DracOS, DarkOs, Itc, DragonFly, Drauger, Elementary, EndeavourOS, Endless,
-                                EuroLinux, Exherbo, Fedora, Feren, FreeBSD, FreeMiNT, Frugalware,
+                                DracOS, DarkOs, Itc, DragonFly, Drauger, Elementary, Emmabuntus, EndeavourOS,
+                                Endless, EuroLinux, Exherbo, Fedora, Feren, FreeBSD, FreeMiNT, Frugalware,
                                 Funtoo, GalliumOS, Garuda, Gentoo, GhostBSD, Pentoo, gNewSense, GNOME, GNU,
                                 GoboLinux, Grombyang, Guix, Haiku, Hash, Huayra, Hyperbola, iglunix, janus,
                                 Kali, KaOS, KDE_neon, Kibojoe, Kogaion, Korora, KSLinux, Kubuntu, LEDE,
@@ -7534,6 +7534,36 @@ eee    eeeeeeeeee     eeeeee    eee
     eeeee                 eeeee
       eeeeeee         eeeeeee
          eeeeeeeeeeeeeeeee
+EOF
+        ;;
+
+        "Emmabuntus"*)
+            set_colors "#f4c300" "#f4c300" "#4f4691"
+            read -rd '' ascii_data <<'EOF'
+${c1}                                 -
+                                 -
+                         _       .        _
+                           "- . ${c1}####  :-
+${c3}                    ##########-${c1}######
+${c3}                 ##############-${c1}####
+${c3}              ########       ########${c1}:
+           - ${c3}######    ${c1}#####    ${c3}###### ${c1}-
+          . ${c3}#####   ${c1}###########   ${c3}##### ${c1}"
+ -        -${c3}####   ${c1}###############   ${c3}####
+${c1}   :_     :${c3}####  ${c1}#####       #####  ${c3}#####
+${c1}      #####${c3}-##                ${c1}####   ${c3}####
+${c1}     #######${c3}-#                ${c1}####   ${c3}####
+${c1}      #####${c3}-###  ${c1}#####       #####  ${c3}#####
+${c1}   ::     :${c3}####   ${c1}###############   ${c3}####
+${c1} -         _${c3}####    ${c1}###########    ${c3}####${c1} .
+${c1}            .${c3}#####     ${c1}#####     ${c3}#####${c1} /
+             . ${c3}#######         #######${c1}:
+${c3}                ################-${c1}####
+${c3}                   ############-${c1}######
+                          :-- "  ${c1}####   -.
+                                  .         :
+                                  -
+                                  -
 EOF
         ;;
 
