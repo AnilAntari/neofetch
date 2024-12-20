@@ -783,7 +783,7 @@ image_source="auto"
 # Default: 'auto'
 # Values:  'auto', 'distro_name'
 # Flag:    --ascii_distro
-# NOTE: AIX, AlmaLinux, Alpine, ALT, AlterLinux, Amazon, Anarchy, Android, instantOS,
+# NOTE: AIX, AlmaLinux, Alpine, ALT, AlterLinux, Amazon, AmogOS, Anarchy, Android,
 #       Antergos, antiX, "AOSC OS", "AOSC OS/Retro", Apricity, ArchCraft, Archman,
 #       ArcoLinux, ArchBox, ARCHlabs, ArchStrike, XFerience, ArchMerge, Arch,
 #       Artix, Arya, AstraLinux, Bedrock, Bitrig, BlackArch, BLAG, BlankOn, BlueLight,
@@ -794,7 +794,7 @@ image_source="auto"
 #       Emmabuntus, EndeavourOS, Endless, EuroLinux, Exherbo, Fedora, Feren, FreeBSD,
 #       FreeMiNT, Frugalware, Funtoo, GalliumOS, Garuda, Gentoo, GhostBSD, Pentoo,
 #       gNewSense, GNOME, GNU, GoboLinux, Grombyang, Guix, Haiku, Hash, Huayra, HydroOS
-#       Hyperbola, iglunix, janus, Kali, KaOS, KDE_neon, Kibojoe, Kogaion, Korora,
+#       Hyperbola, iglunix, instantOS, janus, Kali, KaOS, KDE_neon, Kibojoe, Kogaion, Korora,
 #       KSLinux, Kubuntu, LEDE, LaxerOS, LibreELEC, LFS, Linux_Lite, LinuxMint, Live_Raizo, 
 #       LMDE, Lubuntu, Lunar, macos, Mageia, MagpieOS, MakuluLinux, Mandriva, Manjaro, Maui,
 #       Mer, Minix, MOS, MX_Linux, Namib, Neptune, NetBSD,
@@ -5232,8 +5232,8 @@ ASCII:
     --ascii_colors x x x x x x  Colors to print the ascii art
     --ascii_distro distro       Which Distro's ascii art to print
 
-                                NOTE: AIX, AlmaLinux, Alpine, ALT, AlterLinux, Amazon, Anarchy, Android,
-                                instantOS, Antergos, antiX, \"AOSC OS\", \"AOSC OS/Retro\",
+                                NOTE: AIX, AlmaLinux, Alpine, ALT, AlterLinux, Amazon, AmogOS, Anarchy,
+                                Android, Antergos, antiX, \"AOSC OS\", \"AOSC OS/Retro\",
                                 Apricity, ArchCraft, Archman, ArcoLinux, ArchBox, ARCHlabs, ArchStrike,
                                 XFerience, ArchMerge, Arch, Artix, Arya, AstraLinux, Bedrock, Bitrig,
                                 BlackArch, BLAG, BlankOn, BlueLight, Bodhi, bonsai, BSD, BunsenLabs,
@@ -5243,8 +5243,8 @@ ASCII:
                                 DracOS, DarkOs, Itc, DragonFly, Drauger, Elementary, Emmabuntus, EndeavourOS,
                                 Endless, EuroLinux, Exherbo, Fedora, Feren, FreeBSD, FreeMiNT, Frugalware,
                                 Funtoo, GalliumOS, Garuda, Gentoo, GhostBSD, Pentoo, gNewSense, GNOME, GNU,
-                                GoboLinux, Grombyang, Guix, Haiku, Hash, Huayra, Hyperbola, iglunix, janus,
-                                Kali, KaOS, KDE_neon, Kibojoe, Kogaion, Korora, KSLinux, Kubuntu, LEDE,
+                                GoboLinux, Grombyang, Guix, Haiku, Hash, Huayra, Hyperbola, iglunix, instantOS,
+                                janus, Kali, KaOS, KDE_neon, Kibojoe, Kogaion, Korora, KSLinux, Kubuntu, LEDE,
                                 LaxerOS, LibreELEC, LFS, Linux_Lite, LinuxMint, Live_Raizo, LMDE,
                                 Lubuntu, Lunar, macos,Mageia, MagpieOS, MakuluLinux, Mandriva, Manjaro,
                                 Maui, Mer, Minix, MOS, MX_Linux, Namib, Neptune, NetBSD, Netrunner, Nitrux,
@@ -5847,6 +5847,32 @@ dMMMMMMMMMMMMMMMMh    yMMMMMMMMMMMMMMMMd
             `-+shy    shs+:`
 EOF
         ;;
+
+        "AmogOS"*)
+            set_colors 15 6
+            read -rd '' ascii_data <<'EOF'
+${c1}             ___________
+            /           \
+           /   ${c2}______${c1}    \
+          /   ${c2}/      \${c1}    \
+          |  ${c2}(        )${c1}    \
+         /    ${c2}\______/${c1}     |
+         |                 |
+        /                   \
+        |                   |
+        |                   |
+       /                    |
+       |                    |
+       |     _______        |
+  ____/     /       \       |
+ /          |       |       |
+ |          /   ____/       |
+ \_________/   /            |
+               \         __/
+                \_______/
+EOF
+        ;;
+
         "Anarchy"*)
             set_colors 7 4
             read -rd '' ascii_data <<'EOF'
@@ -5914,34 +5940,6 @@ ${c1}         -o          o-
           MMMMo  oMMMM
           MMMMo  oMMMM
           oNMm-  -mMNs
-EOF
-        ;;
-
-    "instantOS"*)
-        set_colors 4 6
-        read -rd '' ascii_data <<'EOF'
-
-${c1}
-     'cx0XWWMMWNKOd:'.
-  .;kNMMMMMMMMMMMMMWNKd'
- 'kNMMMMMMWNNNWMMMMMMMMXo.
-,0MMMMMW0o;'..,:dKWMMMMMWx.
-OMMMMMXl.        .xNMMMMMNo
-WMMMMNl           .kWWMMMMO'
-MMMMMX;            oNWMMMMK,
-NMMMMWo           .OWMMMMMK,
-kWMMMMNd.        ,kWMMMMMMK,
-'kWMMMMWXxl:;;:okNMMMMMMMMK,
- .oXMMMMMMMWWWMMMMMMMMMMMMK,
-   'oKWMMMMMMMMMMMMMMMMMMMK,
-     .;lxOKXXXXXXXXXXXXXXXO;......
-          ................,d0000000kd:.
-                          .kMMMMMMMMMW0;
-                          .kMMMMMMMMMMMX
-                          .xMMMMMMMMMMMW
-                           cXMMMMMMMMMM0
-                            :0WMMMMMMNx,
-                             .o0NMWNOc.
 EOF
         ;;
 
@@ -8266,6 +8264,34 @@ ${c1}     |
  \    /        /
   \  /        /
    \/________/
+EOF
+        ;;
+
+        "instantOS"*)
+            set_colors 4 6
+            read -rd '' ascii_data <<'EOF'
+
+${c1}
+     'cx0XWWMMWNKOd:'.
+  .;kNMMMMMMMMMMMMMWNKd'
+ 'kNMMMMMMWNNNWMMMMMMMMXo.
+,0MMMMMW0o;'..,:dKWMMMMMWx.
+OMMMMMXl.        .xNMMMMMNo
+WMMMMNl           .kWWMMMMO'
+MMMMMX;            oNWMMMMK,
+NMMMMWo           .OWMMMMMK,
+kWMMMMNd.        ,kWMMMMMMK,
+'kWMMMMWXxl:;;:okNMMMMMMMMK,
+ .oXMMMMMMMWWWMMMMMMMMMMMMK,
+   'oKWMMMMMMMMMMMMMMMMMMMK,
+     .;lxOKXXXXXXXXXXXXXXXO;......
+          ................,d0000000kd:.
+                          .kMMMMMMMMMW0;
+                          .kMMMMMMMMMMMX
+                          .xMMMMMMMMMMMW
+                           cXMMMMMMMMMM0
+                            :0WMMMMMMNx,
+                             .o0NMWNOc.
 EOF
         ;;
 
