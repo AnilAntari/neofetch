@@ -29,7 +29,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-version=8.1.0
+version=8.2.0
 
 # Fallback to a value of '5' for shells which support bash
 # but do not set the 'BASH_' shell variables (osh).
@@ -74,6 +74,7 @@ print_info() {
     info "CPU" cpu
     info "GPU" gpu
     info "Memory" memory
+    info "BIOS" bios
 
     # info "GPU Driver" gpu_driver  # Linux/macOS only
     # info "Disk" disk
@@ -85,8 +86,7 @@ print_info() {
     # info "Public IP" public_ip
     # info "Users" users
     # info "Locale" locale  # This only works on glibc systems.
-    # info "BIOS Info" bios_info
-    # info "Local Time" LocalTime
+    # info "Local Time" localtime
 
     info cols
 }
@@ -2254,14 +2254,13 @@ get_wm_theme() {
 }
 
 get_bios() {
-    bios_vendor="$(< /sys/class/dmi/id/bios_vendor)"
-    bios_version="$(< /sys/class/dmi/id/bios_version)"
-    bios_date="$(< /sys/class/dmi/id/bios_date)"
-    bios_info="$bios_vendor $bios_version $bios_date"
+    bios="$(< /sys/class/dmi/id/bios_vendor)"
+    bios+=" $(< /sys/class/dmi/id/bios_version)"
+    bios+=" $(< /sys/class/dmi/id/bios_date)"
 }
 
 get_localtime() {
-    LocalTime="$(date "+%R %d.%m.%Y")"
+    localtime="$(date "+%R %d.%m.%Y")"
 }
 
 get_cpu() {
@@ -5559,6 +5558,7 @@ get_args() {
                     info "GPU" gpu
                     info "GPU Driver" gpu_driver
                     info "Memory" memory
+                    info "BIOS" bios
 
                     info "Disk" disk
                     info "Battery" battery
@@ -5567,6 +5567,8 @@ get_args() {
                     info "Local IP" local_ip
                     info "Public IP" public_ip
                     info "Users" users
+                    info "Locale" locale
+                    info "Local Time" localtime
 
                     info cols
 
@@ -12122,8 +12124,6 @@ main() {
     [[ $verbose != on ]] && exec 2>/dev/null
     get_simple "$@"
     get_distro
-    get_bios
-    get_localtime
     get_bold
     get_distro_ascii
     [[ $stdout == on ]] && stdout
