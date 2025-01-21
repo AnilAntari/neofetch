@@ -87,6 +87,7 @@ print_info() {
     # info "Users" users
     # info "Locale" locale  # This only works on glibc systems.
     # info "Local Time" localtime
+    # info "Weather" temperature
 
     info cols
 }
@@ -2261,6 +2262,11 @@ get_bios() {
 
 get_localtime() {
     localtime="$(date "+%R %d.%m.%Y")"
+}
+
+get_weather() {
+    source modules/weather
+    $temperature
 }
 
 get_cpu() {
@@ -12124,6 +12130,7 @@ main() {
     [[ $verbose != on ]] && exec 2>/dev/null
     get_simple "$@"
     get_distro
+    get_weather
     get_bold
     get_distro_ascii
     [[ $stdout == on ]] && stdout

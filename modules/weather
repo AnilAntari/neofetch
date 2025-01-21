@@ -1,0 +1,21 @@
+#!/bin/bash
+
+weather_api_key="api_key_for_openweathermap.org"
+ip_service_key="api_key_for_ipinfo.io"
+
+user_ip_address=$(curl -s https://ifconfig.me)
+
+geo_info=$(curl -s "https://ipinfo.io/$user_ip_address?token=$ip_service_key")
+latitude=$(echo "$geo_info" | jq -r '.loc' | awk -F',' '{print $1}')
+longitude=$(echo "$geo_info" | jq -r '.loc' | awk -F',' '{print $2}')
+weather_endpoint="https://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&units=metric&appid=$weather_api_key"
+
+response_weather=$(curl -s "$weather_endpoint")
+
+if [[ -z "$response_weather" ]]; then
+    echo "I can't get the weather data."
+    exit 1
+fi
+
+current_temperature=$(echo "$response_weather" | jq -r '.main.temp')
+export temperature="$current_temperature°C"
